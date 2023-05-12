@@ -1,6 +1,7 @@
 ids = []
 let user_id = ""
 
+
 async function speedrun() {
     let lesson_id = document.getElementById('lesson').value;
     let types = ["listen", "find_word", "learn_word", "scrabble", "insert_missed"]
