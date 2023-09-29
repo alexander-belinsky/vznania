@@ -1,8 +1,10 @@
 ids = []
 let user_id = ""
+let user_group = 0
 
 async function speedrun() {
     let lesson_id = document.getElementById('lesson').value;
+    let user_group = document.getElementById('group').value;
     let types = ["listen", "find_word", "learn_word", "scrabble", "insert_missed"]
 
     await fetch("https://vznaniya.ru/api/v2/lr/complete-task/" + "listen" + "/" + lesson_id, {
@@ -20,7 +22,7 @@ async function speedrun() {
         },
         "referrer": "https://student.vznaniya.ru/",
         "referrerPolicy": "strict-origin-when-cross-origin",
-        "body": "{\"group_id\":129713}",
+        "body": `{\"group_id\":${user_group}}`,
         "method": "POST",
         "mode": "cors",
     });
@@ -41,7 +43,7 @@ async function speedrun() {
         },
         "referrer": "https://student.vznaniya.ru/",
         "referrerPolicy": "strict-origin-when-cross-origin",
-        "body": "{\"group_id\":129713}",
+        "body": `{\"group_id\":${user_group}}`,
         "method": "POST",
         "mode": "cors",
     });
@@ -62,7 +64,7 @@ async function speedrun() {
         },
         "referrer": "https://student.vznaniya.ru/",
         "referrerPolicy": "strict-origin-when-cross-origin",
-        "body": "{\"group_id\":129713}",
+        "body": `{\"group_id\":${user_group}}`,
         "method": "POST",
         "mode": "cors",
     });
@@ -83,7 +85,7 @@ async function speedrun() {
         },
         "referrer": "https://student.vznaniya.ru/",
         "referrerPolicy": "strict-origin-when-cross-origin",
-        "body": "{\"group_id\":129713}",
+        "body": `{\"group_id\":${user_group}}`,
         "method": "POST",
         "mode": "cors",
     });
@@ -104,7 +106,7 @@ async function speedrun() {
         },
         "referrer": "https://student.vznaniya.ru/",
         "referrerPolicy": "strict-origin-when-cross-origin",
-        "body": "{\"group_id\":129713}",
+        "body": `{\"group_id\":${user_group}}`,
         "method": "POST",
         "mode": "cors",
     });
@@ -160,7 +162,7 @@ async function speedrun() {
         },
         "referrer": "https://student.vznaniya.ru/",
         "referrerPolicy": "strict-origin-when-cross-origin",
-        "body": "{\"lesson_id\":" + lesson_id + ",\"group_id\":\"129713\",\"answers\":" + JSON.stringify(b) + "}",
+        "body": "{\"lesson_id\":" + lesson_id + ",\"group_id\":\""+ user_group + "\",\"answers\":" + JSON.stringify(b) + "}",
         "method": "POST",
         "mode": "cors",
     });
